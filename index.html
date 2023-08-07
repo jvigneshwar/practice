@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="body-outer">
+        <div class="left">
+            <div class="logo">MALA <spam class="movies">MOVIES</spam>
+            </div>
+            <div class="movie-poster">
+                <img src="./movie-poster.jpg" alt="manjal veeran" class="poster-img">
+                <div class="movie-details"></div>
+            </div>
+        </div>
+        <div class="right">
+            <img src="./movie-poster.jpg" alt="manjal veeran" class="right-img">
+            <div class="right-cover"></div>
+            <div class="right-content">
+                <div class="right-nav">
+                    <div class="nav-item">01 <span class="nav-item-opacity">CHOOSE A MOVIE</span></div>
+                    <div class="nav-item active-nav">02 <span class="nav-item-opacity">CHOOSE SEATS</span></div>
+                    <div class="nav-item">03 <span class="nav-item-opacity">PURCHASE</span></div>
+                    <div class="nav-item">04 <span class="nav-item-opacity">COMPLETE</span></div>
+                </div>
+                <div class="dateandtime">
+                    <div class="date">
+                        <div class="date-caption">Thursday, 4 May</div>
+                        <div class="date-items">
+                            <div class="date-item">MON<span>1</span></div>
+                            <div class="date-item">TUE<span>2</span></div>
+                            <div class="date-item">WED<span>3</span></div>
+                            <div class="date-item">THU<span class="date-item-active">4</span></div>
+                            <div class="date-item">FRI<span>5</span></div>
+                            <div class="date-item">SAT<span>6</span></div>
+                            <div class="date-item">SUN<span>7</span></div>
+                            <!-- <div class="date-item"></div> -->
+                        </div>
+                    </div>
+                    <div class="time">
+                        <div class="time-caption">Show Time</div>
+                        <div class="time-items">
+                            <div class="time-item">2D<span>10.00</span></div>
+                            <div class="time-item">2D<span>10.00</span></div>
+                            <div class="time-item">3D<span>10.00</span></div>
+                            <div class="time-item">2D<span class="time-item-active">10.00</span></div>
+                            <div class="time-item">3D<span>10.00</span></div>
+                            <div class="time-item">2D<span>10.00</span></div>
+                            <div class="time-item">2D<span>10.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theater">
+                    <div class="screen"></div>
+                    <div class="seats">
+                        <div class="rowno">ABCDEFGHI</div>
+                        <div class="innerseats">
+
+                        </div>
+                        <div class="rowno">ABCDEFGHI</div>
+                    </div>
+                </div>
+                <div class="botoom-nav">
+                    <div class="submit">SUBMIT</div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            const seats = document.getElementsByClassName('innerseats');
+            let rows=9;
+            let column=23;
+            let count = 0;
+            let arr = [0,1,2,3,7,39,11,14,15,19,29,50]
+            for(let i=0;i<rows;i++){
+                let curRow = document.createElement('div');
+                curRow.className = `rows row-${i}`
+                for(let j=0;j<column;j++){
+                    let seat = document.createElement('div')
+                    if(!arr.includes(count))
+                    seat.className = "seat"
+                    else
+                    seat.className = "seat seat-active"
+                    curRow.appendChild(seat)
+                    count++;
+                }
+                seats[0].appendChild(curRow)
+            }
+        </script>
+</body>
+
+</html>
